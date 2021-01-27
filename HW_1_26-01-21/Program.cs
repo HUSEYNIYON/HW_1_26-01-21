@@ -6,18 +6,21 @@ namespace HW_1_26_01_21
     {
         static void Main(string[] args)
         {
+            //Task-1 DZ-1
+            Console.Write("Enter First side = ");
             double firstSide = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter Second side = ");
             double secondSide = Convert.ToDouble(Console.ReadLine());
             var rect = new Rectangle(firstSide, secondSide);
             Console.WriteLine($"Area = {rect.AreaCalculator()}");
-            Console.WriteLine($"")
+            Console.WriteLine($"Perimeter = {rect.PerimeterCalculator()}");
             
         }
     }
     class Rectangle
     {
-        public double firstSide { get; set; }
-        public double secondSide { get; set; }
+        public double firstSide { get; private set; }
+        public double secondSide { get; private set; }
         public Rectangle(double FirstSide, double SecondSide)
         {
             firstSide = FirstSide;
@@ -29,7 +32,7 @@ namespace HW_1_26_01_21
         }
         public double PerimeterCalculator()
         {
-            return 2 * (firstSide * secondSide);
+            return 2 * (firstSide + secondSide);
         }
     }
 }
